@@ -10,12 +10,17 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public EnemyManager manager;
 
+    public ProgressBar healthBar;
+
+    public float maxHealth;
+
     [SerializeField] private float health = 3;
     public float Health
     {
         get => health; set
         {
             health = value;
+            healthBar.Progress = Mathf.Clamp01(health / maxHealth);
             if (health <= 0) manager.Despawn(transform);
         }
     }

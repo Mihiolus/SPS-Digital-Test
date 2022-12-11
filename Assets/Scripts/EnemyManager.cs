@@ -39,6 +39,7 @@ public class EnemyManager : MonoBehaviour
             Enemy script = enemy.GetComponent<Enemy>();
             script.manager = this;
             script.Health = Random.Range(enemyHealth.x, enemyHealth.y);
+            script.maxHealth = script.Health;
         }
     }
 
