@@ -622,7 +622,9 @@ MonoBehaviour:
   spawnDistance: 50
   spawnY: 0
   spawnZ: {x: -3, y: 3}
+  spawnXVar: {x: -0.5, y: 0.5}
   prefab: {fileID: 8812124522308873188, guid: 1b22c2d9a3510894986633dc664e3b4e, type: 3}
+  enemyHealth: {x: 2, y: 4}
 --- !u!1 &1682158750
 GameObject:
   m_ObjectHideFlags: 0

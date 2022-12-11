@@ -6,7 +6,7 @@ public class EnemyManager : MonoBehaviour
 {
     public int min = 1, max = 3;
     public float spawnDistance = 50f, spawnY = 0f;
-    public Vector2 spawnZ;
+    public Vector2 spawnZ, spawnXVar;
     public Transform prefab;
     private Stack<Transform> inactive = new Stack<Transform>();
     private List<Transform> active = new List<Transform>();
@@ -32,7 +32,7 @@ public class EnemyManager : MonoBehaviour
             enemy.SetParent(null);
             enemy.gameObject.SetActive(true);
             Vector3 pos = new Vector3();
-            pos.x = Runner.distanceTraveled + spawnDistance;
+            pos.x = Runner.distanceTraveled + spawnDistance + Random.Range(spawnXVar.x, spawnXVar.y);
             pos.y = spawnY;
             pos.z = Random.Range(spawnZ.x, spawnZ.y);
             enemy.position = pos;
