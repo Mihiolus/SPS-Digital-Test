@@ -11,7 +11,7 @@ public class Runner : MonoBehaviour
     public float attackInterval = 1f;
     private float timer = 0f;
     public MissileManager missileManager;
-    public float missileSpeed = 10f;
+    public float missileSpeed = 10f, launchAngle = 45f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,15 @@ public class Runner : MonoBehaviour
     {
         var missile = missileManager.Get();
         missile.transform.position = transform.position;
-        missile.velocity = (enemy.transform.position - transform.position).normalized * missileSpeed;
+        Vector3 dist = enemy.transform.position - transform.position;
+        dist.y = 0;
+        float horizontalDist = dist.magnitude;
+        missile.gravity = 2 * Mathf.Sin(Mathf.Deg2Rad * launchAngle) * Mathf.Cos(Mathf.Deg2Rad * launchAngle) * missileSpeed * missileSpeed / horizontalDist;
+        missile.velocity = dist.normalized * missileSpeed;
+        float yComp = missile.velocity.magnitude * Mathf.Sin(Mathf.Deg2Rad * launchAngle);
+        Vector3 horComp = missile.velocity * Mathf.Cos(Mathf.Deg2Rad * launchAngle);
+        missile.velocity = horComp;
+        missile.velocity.y = yComp;
     }
 
     private void OnTriggerEnter(Collider other)
