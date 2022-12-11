@@ -10,6 +10,7 @@ public class EnemyManager : MonoBehaviour
     public Transform prefab;
     private Stack<Transform> inactive = new Stack<Transform>();
     private List<Transform> active = new List<Transform>();
+    public Vector2 enemyHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,6 @@ public class EnemyManager : MonoBehaviour
             inactive.Peek().gameObject.SetActive(false);
         }
         Spawn();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void Spawn()
@@ -41,7 +36,9 @@ public class EnemyManager : MonoBehaviour
             pos.y = spawnY;
             pos.z = Random.Range(spawnZ.x, spawnZ.y);
             enemy.position = pos;
-            enemy.GetComponent<Enemy>().manager = this;
+            Enemy script = enemy.GetComponent<Enemy>();
+            script.manager = this;
+            script.Health = Random.Range(enemyHealth.x, enemyHealth.y);
         }
     }
 
@@ -53,6 +50,10 @@ public class EnemyManager : MonoBehaviour
             active.Remove(t);
             inactive.Push(t);
             t.SetParent(transform);
+        }
+        if (active.Count == 0)
+        {
+            Invoke("Spawn", 1f);
         }
     }
 }
