@@ -6,6 +6,7 @@ public class Missile : MonoBehaviour
 {
     public Vector3 velocity;
     public float damage = 1f, gravity;
+    public MissileManager manager;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +23,15 @@ public class Missile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-
+        if (!other.gameObject.activeSelf)
+        {
+            return;
+        }
+        IDamageable d = other.GetComponent<IDamageable>();
+        if (d != null)
+        {
+            d.Health -= damage;
+            manager.Release(this);
+        }
     }
 }

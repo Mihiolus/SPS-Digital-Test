@@ -11,7 +11,7 @@ public class Runner : MonoBehaviour
     public float attackInterval = 1f;
     private float timer = 0f;
     public MissileManager missileManager;
-    public float missileSpeed = 10f, launchAngle = 45f;
+    public float missileSpeed = 10f, launchAngle = 45f, damage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +50,8 @@ public class Runner : MonoBehaviour
         Vector3 horComp = missile.velocity * Mathf.Cos(Mathf.Deg2Rad * launchAngle);
         missile.velocity = horComp;
         missile.velocity.y = yComp;
+        missile.damage = damage;
+        missile.manager = missileManager;
     }
 
     private void OnTriggerEnter(Collider other)

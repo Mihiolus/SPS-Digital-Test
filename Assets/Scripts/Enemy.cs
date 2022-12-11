@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     public float speed = 1f, attackDistance = 1f, attackInterval;
     private float timer = 0;
+
+    [SerializeField] private float health = 3;
+    public float Health { get => health; set { health = value; Debug.Log(health); } }
+
 
     // Start is called before the first frame update
     void Start()
