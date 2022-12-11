@@ -24,6 +24,7 @@ public class Runner : MonoBehaviour
     {
         timer -= Time.deltaTime;
         position = transform.position;
+        nearbyEnemies.RemoveAll(e => !e.gameObject.activeSelf);
         if (nearbyEnemies.Count > 0)
         {
             if (timer <= 0)
