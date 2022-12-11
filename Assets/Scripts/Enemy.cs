@@ -8,8 +8,18 @@ public class Enemy : MonoBehaviour, IDamageable
     public float speed = 1f, attackDistance = 1f, attackInterval;
     private float timer = 0;
 
+    public EnemyManager manager;
+
     [SerializeField] private float health = 3;
-    public float Health { get => health; set { health = value; Debug.Log(health); } }
+    public float Health
+    {
+        get => health; set
+        {
+            health = value;
+            Debug.Log(health);
+            if (health <= 0) manager.Despawn(transform);
+        }
+    }
 
 
     // Start is called before the first frame update

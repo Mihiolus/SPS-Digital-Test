@@ -33,6 +33,7 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < Random.Range(min, max); i++)
         {
             var enemy = inactive.Pop();
+            active.Add(enemy);
             enemy.SetParent(null);
             enemy.gameObject.SetActive(true);
             Vector3 pos = new Vector3();
@@ -40,6 +41,18 @@ public class EnemyManager : MonoBehaviour
             pos.y = spawnY;
             pos.z = Random.Range(spawnZ.x, spawnZ.y);
             enemy.position = pos;
+            enemy.GetComponent<Enemy>().manager = this;
+        }
+    }
+
+    public void Despawn(Transform t)
+    {
+        if (active.Contains(t))
+        {
+            t.gameObject.SetActive(false);
+            active.Remove(t);
+            inactive.Push(t);
+            t.SetParent(transform);
         }
     }
 }
