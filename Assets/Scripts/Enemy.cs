@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
-    public float speed = 1f, attackDistance = 1f, attackInterval;
+    public float speed = 1f, attackDistance = 1f, attackInterval, damage = 1f;
     private float timer = 0;
 
     public EnemyManager manager;
@@ -16,16 +16,8 @@ public class Enemy : MonoBehaviour, IDamageable
         get => health; set
         {
             health = value;
-            Debug.Log(health);
             if (health <= 0) manager.Despawn(transform);
         }
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
@@ -38,7 +30,7 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             if (timer <= 0)
             {
-
+                Runner.instance.Health -= damage;
                 timer = attackInterval;
             }
             return;

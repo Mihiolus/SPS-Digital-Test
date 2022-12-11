@@ -2,21 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Runner : MonoBehaviour
+public class Runner : MonoBehaviour, IDamageable
 {
     public static float distanceTraveled;
     private List<Transform> nearbyEnemies = new List<Transform>();
     public static Vector3 position;
-    public float health = 10f;
+    [SerializeField] private float health = 10f;
     public float attackInterval = 1f;
     private float timer = 0f;
     public MissileManager missileManager;
     public float missileSpeed = 10f, launchAngle = 45f, damage = 1;
 
+    public static Runner instance;
+
+    public float Health { get => health; set => health = value; }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        instance = this;
     }
 
     // Update is called once per frame
