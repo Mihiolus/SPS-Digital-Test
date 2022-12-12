@@ -57,6 +57,7 @@ public class Runner : MonoBehaviour, IDamageable
         set{
             instance.gold = value;
             instance.goldLabel.text = $"${value}";
+            GameEventManager.OnGoldChanged();
         }
     }
 

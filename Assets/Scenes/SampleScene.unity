@@ -1892,8 +1892,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 1370854499}
-  damageBtn: {fileID: 0}
-  speedBtn: {fileID: 0}
+  damageBtn: {fileID: 1565662006}
+  speedBtn: {fileID: 573549598}
   damageIncrease: 0.25
   speedIncrease: 0.25
   cost: 20
