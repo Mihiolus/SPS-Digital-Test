@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Runner : MonoBehaviour, IDamageable
 {
@@ -47,6 +48,19 @@ public class Runner : MonoBehaviour, IDamageable
             }
         }
     }
+
+    public TMP_Text goldLabel;
+    private int gold = 0;
+
+    public static int Gold{
+        get=>instance.gold;
+        set{
+            instance.gold = value;
+            instance.goldLabel.text = $"${value}";
+        }
+    }
+
+
 
     // Start is called before the first frame update
     void Start()

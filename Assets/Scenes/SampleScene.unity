@@ -1896,6 +1896,8 @@ MonoBehaviour:
   speedBtn: {fileID: 0}
   damageIncrease: 0.25
   speedIncrease: 0.25
+  cost: 20
+  costIncrease: 5
 --- !u!114 &1682158752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2051,6 +2053,11 @@ PrefabInstance:
       propertyPath: health
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1461984537669317144, guid: 21a5edb67afcca6418e8cf465b50644e,
+        type: 3}
+      propertyPath: goldLabel
+      value: 
+      objectReference: {fileID: 1391123554}
     - target: {fileID: 1461984537669317144, guid: 21a5edb67afcca6418e8cf465b50644e,
         type: 3}
       propertyPath: healthBar

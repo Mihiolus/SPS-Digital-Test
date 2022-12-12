@@ -10,6 +10,7 @@ public class GUIManager : MonoBehaviour
     public GameObject gameOverScreen;
     public Button damageBtn, speedBtn;
     public float damageIncrease = .25f, speedIncrease = .25f;
+    public int cost = 20, costIncrease = 5;
 
     // Start is called before the first frame update
     void Start()

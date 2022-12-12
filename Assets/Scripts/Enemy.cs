@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     public float speed = 1f, attackDistance = 1f, attackInterval, damage = 1f;
     private float timer = 0;
+    public int dropAmount = 10;
 
     public EnemyManager manager;
 
@@ -22,8 +23,12 @@ public class Enemy : MonoBehaviour, IDamageable
             float dif = health - value;
             health = value;
             healthBar.Progress = Mathf.Clamp01(health / maxHealth);
-            if (health <= 0) manager.Despawn(transform);
-            PopupManager.Spawn(transform.position, dif.ToString());
+            if (health <= 0)
+            {
+                manager.Despawn(transform);
+                PopupManager.Spawn(transform.position, dif.ToString());
+                Runner.Gold += dropAmount;
+            }
         }
     }
 
