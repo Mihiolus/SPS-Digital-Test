@@ -22,8 +22,10 @@ public class Runner : MonoBehaviour, IDamageable
     {
         get => health; set
         {
+            float dif = health - value;
             health = value;
             healthBar.Progress = Mathf.Clamp01(health / maxHealth);
+            PopupManager.Spawn(transform.position, dif.ToString());
         }
     }
 

@@ -19,9 +19,11 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         get => health; set
         {
+            float dif = health - value;
             health = value;
             healthBar.Progress = Mathf.Clamp01(health / maxHealth);
             if (health <= 0) manager.Despawn(transform);
+            PopupManager.Spawn(transform.position, dif.ToString());
         }
     }
 
