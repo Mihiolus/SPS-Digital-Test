@@ -18,12 +18,14 @@ public class GUIManager : MonoBehaviour
     private void GameStart()
     {
         gameOverScreen.SetActive(false);
+        Time.timeScale = 1f;
         enabled = false;
     }
 
     private void GameOver()
     {
         gameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
         enabled = true;
     }
 }
