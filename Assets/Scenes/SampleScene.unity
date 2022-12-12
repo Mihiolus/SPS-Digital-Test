@@ -886,8 +886,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -910,9 +910,9 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -969,10 +969,10 @@ RectTransform:
   m_Father: {fileID: 1370854500}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000013351, y: 428}
-  m_SizeDelta: {x: 308.9039, y: 100.8218}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 164.4}
+  m_SizeDelta: {x: 0, y: 100.82178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &967595429 stripped
 MonoBehaviour:
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   min: 1
   max: 3
-  spawnDistance: 50
+  spawnDistance: 30
   spawnY: 0
   spawnZ: {x: -3, y: 3}
   spawnXVar: {x: -0.5, y: 0.5}
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.8
+  m_fontSize: 61.95
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1897,7 +1897,7 @@ MonoBehaviour:
   damageIncrease: 0.25
   speedIncrease: 0.25
   cost: 20
-  costIncrease: 5
+  costIncrease: 10
 --- !u!114 &1682158752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2040,6 +2040,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1461984537447126160, guid: 21a5edb67afcca6418e8cf465b50644e,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461984537447126160, guid: 21a5edb67afcca6418e8cf465b50644e,
+        type: 3}
       propertyPath: m_LocalPosition.y
       value: 9.38
       objectReference: {fileID: 0}
@@ -2051,7 +2056,7 @@ PrefabInstance:
     - target: {fileID: 1461984537669317144, guid: 21a5edb67afcca6418e8cf465b50644e,
         type: 3}
       propertyPath: health
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1461984537669317144, guid: 21a5edb67afcca6418e8cf465b50644e,
         type: 3}
@@ -2063,6 +2068,11 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 967595429}
+    - target: {fileID: 1461984537669317144, guid: 21a5edb67afcca6418e8cf465b50644e,
+        type: 3}
+      propertyPath: attackInterval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1461984537669317144, guid: 21a5edb67afcca6418e8cf465b50644e,
         type: 3}
       propertyPath: missileManager
@@ -2126,7 +2136,7 @@ PrefabInstance:
     - target: {fileID: 5846009991567116099, guid: 21a5edb67afcca6418e8cf465b50644e,
         type: 3}
       propertyPath: m_Radius
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a5edb67afcca6418e8cf465b50644e, type: 3}

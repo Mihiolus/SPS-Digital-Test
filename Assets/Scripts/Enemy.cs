@@ -23,10 +23,10 @@ public class Enemy : MonoBehaviour, IDamageable
             float dif = health - value;
             health = value;
             healthBar.Progress = Mathf.Clamp01(health / maxHealth);
+            PopupManager.Spawn(transform.position, dif.ToString());
             if (health <= 0)
             {
                 manager.Despawn(transform);
-                PopupManager.Spawn(transform.position, dif.ToString());
                 Runner.Gold += dropAmount;
             }
         }

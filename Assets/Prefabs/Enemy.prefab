@@ -113,9 +113,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  attackDistance: 1
+  attackDistance: 1.5
   attackInterval: 1
   damage: 1
+  dropAmount: 10
   manager: {fileID: 0}
   healthBar: {fileID: 3934046721514717636}
   maxHealth: 0
