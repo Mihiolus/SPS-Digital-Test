@@ -1519,9 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e088f6076591a4dbb3b888da92d26d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverText: {fileID: 949444098}
-  instructionsText: {fileID: 0}
-  runnerText: {fileID: 0}
+  gameOverScreen: {fileID: 949444097}
 --- !u!114 &1682158752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1672,6 +1670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Runner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461984537669317144, guid: 21a5edb67afcca6418e8cf465b50644e,
+        type: 3}
+      propertyPath: health
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1461984537669317144, guid: 21a5edb67afcca6418e8cf465b50644e,
         type: 3}

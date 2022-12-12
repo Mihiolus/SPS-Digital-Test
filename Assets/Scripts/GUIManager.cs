@@ -5,28 +5,25 @@ using TMPro;
 
 public class GUIManager : MonoBehaviour
 {
-    public TMP_Text gameOverText, instructionsText, runnerText;
+    public GameObject gameOverScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         GameEventManager.GameStart += GameStart;
         GameEventManager.GameOver += GameOver;
-        gameOverText.enabled = false;
+        gameOverScreen.SetActive(false);
     }
 
     private void GameStart()
     {
-        gameOverText.enabled = false;
-        instructionsText.enabled = false;
-        runnerText.enabled = false;
+        gameOverScreen.SetActive(false);
         enabled = false;
     }
 
     private void GameOver()
     {
-        gameOverText.enabled = true;
-        instructionsText.enabled = true;
+        gameOverScreen.SetActive(true);
         enabled = true;
     }
 }
