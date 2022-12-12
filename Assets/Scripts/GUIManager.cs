@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GUIManager : MonoBehaviour
 {
@@ -27,5 +28,12 @@ public class GUIManager : MonoBehaviour
         gameOverScreen.SetActive(true);
         Time.timeScale = 0f;
         enabled = true;
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        var scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.buildIndex, LoadSceneMode.Single);
     }
 }
