@@ -14,6 +14,21 @@ public class Runner : MonoBehaviour, IDamageable
     public MissileManager missileManager;
     public float missileSpeed = 10f, launchAngle = 45f, damage = 1;
 
+    public static float AttackInterval
+    {
+        get => instance.attackInterval;
+        set
+        {
+            instance.attackInterval = value;
+        }
+    }
+
+    public static float Damage
+    {
+        get => instance.damage;
+        set => instance.damage = value;
+    }
+
     public static Runner instance;
 
     public ProgressBar healthBar;
